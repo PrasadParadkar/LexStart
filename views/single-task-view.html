@@ -1,0 +1,26 @@
+<div class="container" ng-init="singleTaskCtrl.loadSingleTask()">
+	<p>Task Text : {{singleTaskCtrl.singleTask.Legal_Action_Type.legal_action}}</p>
+	<p>Task Description : {{singleTaskCtrl.singleTask.Legal_Action_Type.template}}</p>
+	<p>Created at :{{singleTaskCtrl.singleTask.created_at | date:"dd/MMM/yyyy 'at' h:mm:ss a Z"}}</p>
+	<p>Created By - {{singleTaskCtrl.singleTask.Action_Attribute.value}} on {{singleTaskCtrl.singleTask.Action_Attribute.created_at | date:"dd/MMM/yyyy 'at' h:mm:ss a Z"}}</p>
+	<p>Documents :</p>
+	<div id="collapseDiv" ng-repeat="doc in singleTaskCtrl.singleTask.Documents">
+		<div class="card" data-toggle="collapse" href="#collapse_{{doc.id}}" aria-expanded="true" aria-controls="collapse_{{doc.id}}">
+		    <div class="card-header" role="tab">
+		        <h5>{{doc.name}}</h5>
+		    </div>
+		</div>
+		<div id="collapse_{{doc.id}}" class="collapse" role="tabpanel" data-parent="#collapseDiv">
+	      <div class="card-body">
+	        <p>URL : {{doc.url}}</p>
+	        <p>Comments : {{doc.comments}}</p>
+	        <p>Uploaded on : {{doc.doc_executed_date | date:"dd/MMM/yyyy 'at' h:mm:ss a Z"}}</p>
+	      </div>
+	    </div>
+	</div>
+	<p>Action :</p>
+	<div ng-repeat="action in singleTaskCtrl.singleTask.Legal_Action_Type.Action_Type_Operation">
+		<p class="col-sm-2">{{action.operation}}</p>
+		<p class="col-sm-10">{{action.url}}</p>
+	</div>
+</div>

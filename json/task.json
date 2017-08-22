@@ -1,0 +1,179 @@
+{
+  "tasks": [
+    {
+      "id": 272,
+      "org_id": 1,
+      "status": 1,
+      "action_date": null,
+      "created_at": "2016-01-18T09:38:13.000Z",
+      "updated_at": "2016-01-18T09:38:13.000Z",
+      "legal__action__type_id": 38,
+      "previous_id": null,
+      "Legal_Action_Type": {
+        "id": 38,
+        "legal_action": "Upload draft docs",
+        "template": "Upload draft docs for exectution by company and director",
+        "historical": false,
+        "createdAt": "2015-11-18T09:38:22.000Z",
+        "updatedAt": "2015-11-18T09:38:22.000Z",
+        "Action_Type_Operation": [
+          {
+            "id": 3,
+            "operation": "form",
+            "url": "index.board_addDirector_form",
+            "created_at": "2015-11-18T09:48:23.000Z",
+            "updated_at": "2015-11-18T09:48:23.000Z",
+            "legalActionTypeId": 38
+          },
+          {
+            "id": 4,
+            "operation": "email",
+            "url": "sup@sup.com",
+            "created_at": "2015-11-18T09:48:23.000Z",
+            "updated_at": "2015-11-18T09:48:23.000Z",
+            "legalActionTypeId": 38
+          },
+          {
+            "id": 5,
+            "operation": "form",
+            "url": "index.board_dir_form",
+            "created_at": "2015-11-18T09:48:23.000Z",
+            "updated_at": "2015-11-18T09:48:23.000Z",
+            "legalActionTypeId": 38
+          }
+        ]
+      },
+      "Documents": [
+        {
+          "id": 1,
+          "name": "d5659715edc82bc11a510f4fc611ert.docx",
+          "type": "F",
+          "url": "upload/70/d5659715edc82bc11a510f4fc611ert.docx",
+          "flag": null,
+          "tag": null,
+          "doc_executed_date": "2016-01-07T00:00:00.000Z",
+          "doc_expiry_date": null,
+          "comments": "sample comment1",
+          "created_at": "2016-01-05T11:31:00.000Z",
+          "updated_at": "2016-01-05T11:31:00.000Z",
+          "doc__class_id": 6,
+          "organization_id": 1
+        },
+        {
+          "id": 2,
+          "name": "d5659715edc82bc11a510f4fc61134cd.docx",
+          "type": "F",
+          "url": "upload/70/d5659715edc82bc11a510f4fc61134cd.docx",
+          "flag": null,
+          "tag": null,
+          "doc_executed_date": "2016-01-13T00:00:00.000Z",
+          "doc_expiry_date": null,
+          "comments": "sample comment2",
+          "created_at": "2016-01-05T11:35:20.000Z",
+          "updated_at": "2016-01-05T11:35:20.000Z",
+          "doc__class_id": 6,
+          "organization_id": 1
+        }
+      ],
+      "Action_Attribute": {
+        "id": 42,
+        "value": "Dhanush Raheja",
+        "created_at": "2016-01-18T09:38:13.000Z",
+        "updated_at": "2016-01-18T09:38:13.000Z",
+        "attribute_id": 4,
+        "legal__action_id": 272
+      }
+    },
+    {
+      "id": 275,
+      "org_id": 1,
+      "status": 1,
+      "action_date": null,
+      "created_at": "2016-01-18T10:36:18.000Z",
+      "updated_at": "2016-01-18T10:36:18.000Z",
+      "legal__action__type_id": 39,
+      "previous_id": null,
+      "Legal_Action_Type": {
+        "id": 39,
+        "legal_action": "Review Uploaded Docs",
+        "template": "Review docs upload by user for",
+        "historical": false,
+        "createdAt": "2015-11-18T09:38:22.000Z",
+        "updatedAt": "2015-11-18T09:38:22.000Z",
+        "Action_Type_Operation": [
+          {
+            "id": 6,
+            "operation": "form",
+            "url": "index.board_reviewDirector_form",
+            "created_at": "2015-11-18T09:48:23.000Z",
+            "updated_at": "2015-11-18T09:48:23.000Z",
+            "legalActionTypeId": 39
+          },
+          {
+            "id": 3,
+            "operation": "email",
+            "url": "sup@sup.com",
+            "created_at": "2015-11-18T09:48:23.000Z",
+            "updated_at": "2015-11-18T09:48:23.000Z",
+            "legalActionTypeId": 39
+          }
+        ]
+      },
+      "Documents": [
+        {
+          "id": 1,
+          "name": "d5659715edc82bc11a510f4fc611ert.docx",
+          "type": "F",
+          "url": "upload/70/d5659715edc82bc11a510f4fc611ert.docx",
+          "flag": null,
+          "tag": null,
+          "doc_executed_date": "2016-01-07T00:00:00.000Z",
+          "doc_expiry_date": null,
+          "comments": "sample comment1",
+          "created_at": "2016-01-05T11:31:00.000Z",
+          "updated_at": "2016-01-05T11:31:00.000Z",
+          "doc__class_id": 6,
+          "organization_id": 1
+        },
+        {
+          "id": 2,
+          "name": "d5659715edc82bc11a510f4fc61134cd.docx",
+          "type": "F",
+          "url": "upload/70/d5659715edc82bc11a510f4fc61134cd.docx",
+          "flag": null,
+          "tag": null,
+          "doc_executed_date": "2016-01-13T00:00:00.000Z",
+          "doc_expiry_date": null,
+          "comments": "sample comment2",
+          "created_at": "2016-01-05T11:35:20.000Z",
+          "updated_at": "2016-01-05T11:35:20.000Z",
+          "doc__class_id": 6,
+          "organization_id": 1
+        },
+        {
+          "id": 4,
+          "name": "Sample Doc 3",
+          "type": "F",
+          "url": "upload/70/1718fe16cd88fc07da4910e70a11ff85.docx",
+          "flag": null,
+          "tag": null,
+          "doc_executed_date": "2016-01-21T00:00:00.000Z",
+          "doc_expiry_date": null,
+          "comments": "sample comment3",
+          "created_at": "2016-01-05T11:45:00.000Z",
+          "updated_at": "2016-01-05T11:45:00.000Z",
+          "doc__class_id": 6,
+          "organization_id": 1
+        }
+      ],
+      "Action_Attribute": {
+        "id": 43,
+        "value": "Pritish Nandy",
+        "created_at": "2016-01-18T10:36:18.000Z",
+        "updated_at": "2016-01-18T10:36:18.000Z",
+        "attribute_id": 4,
+        "legal__action_id": 275
+      }
+    }
+  ]
+}

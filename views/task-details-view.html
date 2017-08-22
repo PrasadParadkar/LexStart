@@ -1,0 +1,98 @@
+<br />
+<div class="container" ng-init="taskDetailsCtrl.loadTaskDetails()">
+	<div class="card"  ng-repeat="task in taskDetailsCtrl.tasks">
+	  <div class="card-block">
+	    <h4 class="card-title">{{task.Legal_Action_Type.legal_action}}</h4>
+	    <p class="card-text">{{task.Legal_Action_Type.template}}</p>
+	    <a href="#/{{task.id}}" class="card-link">Click for detail</a>
+	  </div>
+	</div>
+</div>
+
+<div>
+	<center><button id="btnAddTask" class="btn-success" data-toggle="modal" data-target="#exampleModal">Add New Task</button></center>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" ng-controller="CreateTaskController as createTaskCtrl">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create New Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+			<form ng-submit="createTaskCtrl.createTask()">
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Task Text</label>
+					<div class="col-sm-10">
+				    	<input type="Text" class="form-control" placeholder="write task text here" ng-modal="CreateTaskCtrl.taskText">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Task Description</label>
+					<div class="col-sm-10">
+				    	<input type="Text" class="form-control" placeholder="write task description here" ng-modal="CreateTaskCtrl.taskDesc">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Task Date</label>
+					<div class='col-sm-10 input-group date' id='datetimepicker1'>
+	                    <input type='text' id="date" datepicker class="form-control" placeholder="pick a date" ng-modal="CreateTaskCtrl.taskDate" />
+	                </div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Task Action</label>
+					<div class=" col-sm-10">
+						<label class="checkbox-inline">
+					      <input type="checkbox" ng-model="createTaskCtrl.callAction" ng-true-value="'Call'" ng-false-value="">Call
+					    </label>
+					    <label class="checkbox-inline">
+					      <input type="checkbox" ng-model="createTaskCtrl.commentAction" ng-true-value="'Comment'"  ng-false-value="">Comment
+					    </label>
+					    <label class="checkbox-inline">
+					      <input type="checkbox" ng-model="createTaskCtrl.emailAction" ng-true-value="'Email'"  ng-false-value="">Email
+					    </label>
+					    <label class="checkbox-inline">
+					      <input type="checkbox" ng-model="createTaskCtrl.uploadAction" ng-true-value="'Upload'"  ng-false-value="">Upload
+					    </label>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10" ng-if="createTaskCtrl.callAction">
+				    	<input id="txtContactNo" type="text" class="form-control" ng-model="createTaskCtrl.contact" placeholder="enter contact number" ng-blur="createTaskCtrl.txtCallChanged()">
+				  	</div>
+				  	<div class="col-sm-offset-2 col-sm-10" ng-if="createTaskCtrl.commentAction">
+				  		<textarea id="txtComments" class="form-control" rows="5" cols="10" placeholder="write comments here" ng-model="createTaskCtrl.comments" ng-blur="createTaskCtrl.txtCommentChanged()"></textarea>
+				  	</div>
+					<div class="col-sm-offset-2 col-sm-10" ng-if="createTaskCtrl.emailAction">
+				    	<input id="txtEmail" type="email" class="form-control" placeholder="enter valid email address" ng-model="createTaskCtrl.email" ng-blur="createTaskCtrl.txtEmailChanged()">
+				  	</div>
+				  	<div class="col-sm-offset-2 col-sm-10" ng-if="createTaskCtrl.uploadAction">
+				    	<input id="fileSelected" type="file" class="form-control-file" ng-model="createTaskCtrl.file" multiple>
+				  	</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Employer Name</label>
+					<div class="col-sm-10">
+				    	<input type="Text" class="form-control" ng-model="createTaskCtrl.empName" placeholder="write employee name here">
+					</div>
+				</div>
+			</form>
+			</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Create Task" ng-click="createTaskCtrl.createTask()"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+	$(document).ready(function(){
+    	$('#date').datepicker({});
+});
+</script>
